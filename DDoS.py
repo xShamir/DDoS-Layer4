@@ -3,13 +3,14 @@ import sys
 import socket
 import threading
 import time as clock
+from asyncore import loop
 
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 time = int(sys.argv[3])
 method = str(sys.argv[4])
 
-loops = 1000
+loops = 10000
 
 def send_packet(amplifier):
     try:
