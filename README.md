@@ -10,4 +10,4 @@
   Layer 4 DDoS attacks are often referred to as SYN flood. It works at the TCP (Transport Protocol) layer. A TCP connection is established in what is known as a 3-way handshake. The client sends a SYN packet, the server responds with a SYN-ACK, and the client responds to that with an ACK. after the "three-way-handshake" is complete, the TCP connection is considered established.<br />
 
   Usage: ```python DDoS.py {ip} {port} {time} {method}``` <br />
-  Example: ```python Saphyra-4.py 127.0.0.1 8080 30 UDP-Mix```<br />
+  Example: ```python DDoS.py 127.0.0.1 8080 30 UDP-Mix```<br />
