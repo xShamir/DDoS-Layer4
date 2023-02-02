@@ -12,4 +12,4 @@
   Usage: ```python DDoS.py {ip} {port} {method}``` <br />
   Example: ```python DDoS.py 127.0.0.1 8080 UDP-Mix```<br />
 
-123
+1234
